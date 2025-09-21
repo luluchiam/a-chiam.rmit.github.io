@@ -1,0 +1,223 @@
+/* 
+===========================================================
+STYLE.CSS 
+===========================================================
+
+For this project, I created a CSS file that gives the media player a nature-inspired theme. 
+I focused on designing a calming and visually soothing interface, using soft, gentle colors that evoke a sense of relaxation.
+The palette primarily features sage green and light mint tones, which create a fresh and peaceful atmosphere.
+To further reinforce the natural theme, I incorporated an image that includes elements such as mountains, flowers, and trees,
+adding depth and visual interest while connecting the media player to a tranquil, outdoor environment. 
+Overall, the design aims to create an immersive and relaxing experience for users.
+
+-----------------------------------------------------------
+THEME
+-----------------------------------------------------------
+
+Colours: 
+- Sage green (#9caf88) as the dominant background color, 
+  representing calmness and balance.
+- Light mint (#dff5e1) as a secondary accent, ensuring 
+  contrast and freshness.
+- Darker greens (#4a5d23) for text, borders, and accents 
+  for natural readability.
+
+Typography:
+I chose to use the imported fonts "REM" and "Tuffy" from Google Fonts for my headings and body text.
+I wanted the simple, natural typography to align with the overall "organic" theme of my design.
+
+Nature Elements:
+I chose a calming nature landscape image inside the media player to reinforce the "relax/study" mood,
+featuring mountains, trees, and flowers to suggest peace, growth, and balance—ideal for a study environment. 
+The bright colors, including greens, blues, and purples, were selected to naturally reduce stress and create a sense of freshness,
+while butterflies add a touch of lightness and movement, symbolising calm transitions and focus.
+Overall, the scenery ties into the green background theme, making the design feel consistent and immersive.
+
+===========================================================
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "REM", sans-serif;
+}
+
+/* -------------------- BODY ----------------------------
+For the body background, I chose a combination of sage green and light mint. 
+I used a gradient to blend these colors smoothly, creating a soft and natural feeling that feels calming to the eye. 
+I wanted the background to evoke a sense of tranquility and connect with the overall nature-inspired theme of the project, 
+making the interface feel fresh and peaceful.
+---------------------------------------------------------*/
+body {
+  background: linear-gradient(to bottom, #9caf88, #dff5e1);
+  color: #2e3b1f; /* dark natural green for text */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.3; /* faint, delicate */
+  z-index: 0;
+}
+body::before {
+  top: 0;
+  left: 0;
+  background-image: url("https://pngimg.com/uploads/branches/branches_PNG18725.png");
+}
+body::after {
+  top: 0;
+  right: 0;
+  background-image: url("https://pngimg.com/uploads/branches/branches_PNG18726.png");
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: url("https://pngimg.com/uploads/grass/grass_PNG10835.png")
+    repeat-x;
+  background-size: contain;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* -------------------- HEADER --------------------------
+I made the header bold and large to ensure it immediately welcomes the user and draws their attention in a clear and friendly way.
+To complement this, I chose a dark green shade for the text, which not only keeps it highly readable but also harmonises with the
+overall natural theme of the design.
+*/
+
+/* --------------------------------------------------------*/
+header {
+  text-align: center;
+  padding: 20px;
+  font-family: "Tuffy", serif;
+  font-size: 1.8rem;
+  color: #2f4020;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+/* -------------------- MAIN ----------------------------
+Media Player Container:
+I added a light green background with rounded corners to give the media player a soft and inviting appearance.
+To subtly define its space on the page, I included a thin border that separates it gently without drawing too much attention. 
+I also kept the layout simple and uncluttered, ensuring that the user’s focus remains on the content itself rather than being
+distracted by overly complex design elements.
+*/
+/* --------------------------------------------------------*/
+main.double-border {
+  margin: 20px auto;
+  padding: 20px;
+  width: 60%;
+  border: 4px double #4a5d23;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.4); /* translucent */
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+/* -------------------- IMAGE IN MEDIA PLAYER ---------------------
+I chose a nature landscape over abstract art or plain shapes because it directly communicates calmness and serenity. 
+While abstract designs can look modern, they don’t always convey a specific feeling, whereas the landscape instantly creates
+a relaxing mood. Plain shapes or flat colors might feel too empty and lack the warmth that natural elements bring.
+By including mountains, trees, and flowers, the image provides a sense of openness and fresh air,
+aligning perfectly with the idea of studying in a stress-free, peaceful environment.
+I also incorporated subtle visual details, such as butterflies and greenery, to add points of interest without 
+overwhelming the user, unlike busy abstract visuals that can feel distracting.
+------------------------------------------------------------------*/
+.main-screen img {
+  display: block;
+  max-width: 100%;
+  max-height: 450px;
+  margin: 0 auto;
+  border: 3px solid #4a5d23;
+  border-radius: 10px;
+  background: #000;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* -------------------- CONTROLS -------------------------
+I used clean, minimal icons to keep the design uncluttered and visually simple.
+I also added spacing between the buttons to make them easy to click and create a comfortable, user-friendly experience. 
+To ensure the buttons felt integrated with the rest of the design, I chose matching green tones, making them blend seamlessly
+with the overall nature-inspired theme.
+/* 
+---------------------------------------------------------*/
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.controls button {
+  background-color: #dff5e1;
+  border: 2px solid #4a5d23;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.controls button:hover {
+  background-color: #bcd9c4;
+  transform: scale(1.1);
+}
+
+/* Progress bar */
+#progress-bar-container {
+  flex: 1;
+  height: 10px;
+  background-color: #cde5d4;
+  border: 1px solid #4a5d23;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 10px;
+}
+#progress-bar {
+  display: block;
+  height: 100%;
+  width: 0;
+  background-color: #4a5d23;
+  transition: width 0.2s linear;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #2f4020;
+  position: relative;
+  z-index: 1;
+}
+
+footer a {
+  color: #4a5d23;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
